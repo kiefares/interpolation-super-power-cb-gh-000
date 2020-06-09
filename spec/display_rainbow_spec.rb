@@ -11,7 +11,7 @@ describe '#display_rainbow' do
   it 'prints out the colors of the rainbow correctly when passed in in order' do
     colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
-    expect(colors).to receive(:[]).with(0).at_least(:once)
+    expect(colors).to receive(:[]).with(0).at_least(:twice).and_return("red")
     expect(colors).to receive(:[]).with(1).at_least(:once).and_return("orange")
     expect(colors).to receive(:[]).with(2).at_least(:once).and_return("yellow")
     expect(colors).to receive(:[]).with(3).at_least(:once).and_return("green")
